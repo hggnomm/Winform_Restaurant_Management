@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace RM
 {
@@ -16,27 +17,37 @@ namespace RM
 
             using (MySqlConnection conn = new MySqlConnection(connectString))
             {
-                conn.Open();
-                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@password", password);
+                    adapter.SelectCommand.Parameters.AddWithValue("@username", username);
+                    adapter.SelectCommand.Parameters.AddWithValue("@password", password);
 
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);  // Lấy kết quả truy vấn vào DataTable
+
+                    if (dt.Rows.Count > 0)
                     {
-                        if (reader.HasRows)
-                        {
-                            isValid = true;
-                        }
-                        else
-                        {
-                            // Sai thông tin đăng nhập
-                        }
+                        isValid = true;
+                        USER = dt.Rows[0]["uName"].ToString();
+                    }
+                    else
+                    {
+                        // Sai thông tin đăng nhập
                     }
                 }
             }
+
             return isValid;
         }
 
+        // Create property for username
+
+        public static string user;
+
+        public static string USER
+        {
+            get { return user; }
+            private set { user = value; }
+        }
     }
 }
