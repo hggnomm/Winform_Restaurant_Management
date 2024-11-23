@@ -41,7 +41,6 @@ namespace RM
         }
 
         // Create property for username
-
         public static string user;
 
         public static string USER

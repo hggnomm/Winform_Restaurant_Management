@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RM
@@ -17,14 +10,24 @@ namespace RM
             InitializeComponent();
         }
 
+        // Method to add control in Main Frame
+        public void AddControls(Form form)
+        {
+            centerPanel.Controls.Clear();
+            form.Dock = DockStyle.Fill;
+            form.TopLevel = false;
+            centerPanel.Controls.Add(form);
+            form.Show();
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btnHome_Click(object sender, EventArgs e)
         {
-
+            AddControls(new frmHome());
         }
 
         private void frmMain_Load(object sender, EventArgs e)
