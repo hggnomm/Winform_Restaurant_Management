@@ -193,6 +193,16 @@ namespace RM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_settings_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-settings-100", resourceCulture);
@@ -206,6 +216,16 @@ namespace RM.Properties {
         internal static System.Drawing.Bitmap icons8_settings_100_white {
             get {
                 object obj = ResourceManager.GetObject("icons8-settings-100-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sum_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sum-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
