@@ -38,6 +38,11 @@
             this.btnAdd.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Normal;
             this.btnAdd.PressedState.ImageSize = new System.Drawing.Size(55, 55);
             // 
+            // label2
+            // 
+            this.label2.Size = new System.Drawing.Size(121, 25);
+            this.label2.Text = "Category List";
+            // 
             // frmCategoryView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
